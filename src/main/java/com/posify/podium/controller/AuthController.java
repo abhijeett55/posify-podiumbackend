@@ -43,4 +43,25 @@ public class AuthController {
         UserDto userDto = new UserDto(user.getId(), user.getEmail());
         return ResponseEntity.ok(new AuthResponse("Login successfull", token, userDto));
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {       
+        Optional<User> existingUser = userRepository.findByEmail(request.getEmail());
+        if (existingUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new AuthResponse("Email already registered", null, null));
+        }
+
+    
+        User user = new User();
+        user.setEmail(request.getEmail());
+        user.setPassword(PasswordEncoder.encode(request.getPassword()));
+
+
+        userRepository.save(user);
+        String token = jwtUtil.generateToken(user.getEmail());
+        UserDto userDto = new UserDto(user.getId(), user.getEmail());
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(new AuthResponse("User registered successfully", token, userDto));
+    }
 }
