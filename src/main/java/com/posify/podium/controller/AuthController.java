@@ -54,13 +54,14 @@ public class AuthController {
 
     
         User user = new User();
+        user.setName(request.getName());
         user.setEmail(request.getEmail());
         user.setPassword(PasswordEncoder.encode(request.getPassword()));
 
 
         userRepository.save(user);
         String token = jwtUtil.generateToken(user.getEmail());
-        UserDto userDto = new UserDto(user.getId(), user.getEmail());
+        UserDto userDto = new UserDto(user.getId(), user.getName() ,user.getEmail());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new AuthResponse("User registered successfully", token, userDto));
     }

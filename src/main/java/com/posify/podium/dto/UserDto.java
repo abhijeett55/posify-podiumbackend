@@ -3,10 +3,12 @@ package com.posify.podium.dto;
 public class UserDto {
 
     private String id;
+    private String name;
     private String email;
 
-    public UserDto(String id, String email) {
+    public UserDto(String id, String name,String email) {
         this.id = id;
+        this.name = name;
         this.email = email;
     }
 
@@ -15,6 +17,13 @@ public class UserDto {
     }
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
