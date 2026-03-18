@@ -24,8 +24,6 @@ public class DocumentFile {
         this.dateCreated = dateCreated;
         this.fileData = fileData;
     }
-
-    // getters and setters
         public String getId() {
         return id;
     }

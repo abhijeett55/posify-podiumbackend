@@ -30,6 +30,9 @@ public class WebSecurityConfig {
             .authorizeHttpRequests( auth->auth
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/documents/**").permitAll()
+                .requestMatchers("/api/reports/**").permitAll()
+                .requestMatchers("/api/leads/**").permitAll()
+
                 .anyRequest().authenticated()
                 )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
