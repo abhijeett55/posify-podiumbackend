@@ -11,6 +11,7 @@ public class Report {
 
     private String name;
     private String description;
+    private String currentDate;
     private String expectedDate;
     private String budget;
     private String status;
@@ -19,9 +20,10 @@ public class Report {
 
     public Report() { }
 
-    public Report(String name, String description, String expectedDate, String budget, String status, String assignedTo) { 
+    public Report(String name, String description, String currentDate ,String expectedDate, String budget, String status, String assignedTo) { 
       this.name = name;
       this.description = description;
+      this.currentDate = currentDate;
       this.expectedDate = expectedDate;
       this.budget = budget;
       this.status = status;
@@ -37,6 +39,9 @@ public class Report {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public String getCurrentDate() { return currentDate; }
+    public void setCurrentDate(String currentDate) { this.currentDate = currentDate; }
 
     public String getExpectedDate() { return expectedDate; }
     public void setExpectedDate(String expectedDate) { this.expectedDate = expectedDate; }
