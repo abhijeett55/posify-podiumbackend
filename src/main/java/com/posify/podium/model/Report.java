@@ -16,18 +16,20 @@ public class Report {
     private String budget;
     private String status;
     private String assignedTo;
+    private String feedback;
 
 
     public Report() { }
 
-    public Report(String name, String description, String currentDate ,String expectedDate, String budget, String status, String assignedTo) { 
+    public Report(String name, String description, String currentDate ,String expectedDate, String budget, String status, String assignedTo, String feedback) { 
       this.name = name;
       this.description = description;
       this.currentDate = currentDate;
       this.expectedDate = expectedDate;
       this.budget = budget;
       this.status = status;
-      this.assignedTo = assignedTo;  
+      this.assignedTo = assignedTo; 
+      this.feedback = feedback; 
 
     }
 
@@ -56,5 +58,7 @@ public class Report {
     public String getAssignedTo() { return assignedTo; }
     public void setAssignedTo(String assignedTo) { this.assignedTo = assignedTo; }
 
+    public String getFeedback() { return feedback; }
+    public void setFeedback(String feedback) { this.feedback = feedback; }
     
 }
