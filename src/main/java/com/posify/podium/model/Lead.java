@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Lead {
     @Id
     private String id;
-
+    private String expectedDate;
     private String firstName;
     private String lastName;
     private String company;
@@ -22,12 +22,13 @@ public class Lead {
 
     public Lead() { }
 
-    public Lead(String firstName,
+    public Lead(String expectedDate, String firstName,
         String lastName,String company,
         String jobTitle,String email, String phone,
         String description, String source,
         String referredBy, String campaign,
-        String assignedTo, String status) { 
+        String assignedTo, String status) {
+        this.expectedDate = expectedDate;
         this.firstName = firstName;
         this.lastName = lastName;
         this.company = company;
@@ -44,6 +45,8 @@ public class Lead {
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
+    public String getExpectedDate() { return expectedDate; }
+    public void setExpectedDate(String expectedDate ) { this.expectedDate = expectedDate; }
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public String getLastName() { return lastName; }

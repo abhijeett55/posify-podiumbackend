@@ -35,6 +35,7 @@ public class LeadService {
         Lead existing = leadRepository.findById(id).orElse(null);
 
         if (existing != null) {
+            existing.setExpectedDate(updatedLead.getExpectedDate());
             existing.setFirstName(updatedLead.getFirstName());
             existing.setLastName(updatedLead.getLastName());
             existing.setCompany(updatedLead.getCompany());
