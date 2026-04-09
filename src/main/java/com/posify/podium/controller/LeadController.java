@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/leads")
-@CrossOrigin(origins = "http://localhost:4200") // Angular
+
 public class LeadController {
 
     private final LeadService leadService;

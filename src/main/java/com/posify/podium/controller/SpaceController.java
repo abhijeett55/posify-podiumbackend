@@ -14,7 +14,7 @@ import com.posify.podium.respository.mongo.SpaceRepository;
 
 @RestController
 @RequestMapping("/api/spaces")
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class SpaceController {
 
     private final SpaceRepository repo;
