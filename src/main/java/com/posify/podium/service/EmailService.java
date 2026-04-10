@@ -1,7 +1,7 @@
 package com.posify.podium.service;
 
 import com.posify.podium.model.Email;
-import com.posify.podium.respository.jpa.EmailRepository;
+import com.posify.podium.respository.mongo.EmailRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
