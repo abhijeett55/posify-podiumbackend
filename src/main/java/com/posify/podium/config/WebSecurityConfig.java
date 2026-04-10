@@ -52,8 +52,9 @@ public class WebSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        
-        config.setAllowedOrigins(List.of("posify-podium-ostyzxzvo-abhijeett55s-projects.vercel.app"));
+        config.setAllowedOrigins(List.of(
+                "https://posify-podium.vercel.app",
+                "https://posify-podium-ostyzxzvo-abhijeett55s-projects.vercel.app"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
